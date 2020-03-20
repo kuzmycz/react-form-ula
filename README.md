@@ -1,167 +1,150 @@
-# TSDX React User Guide
+# React Form-ula User Guide
+Inspired by this formik, this library exists to improve the performance of forms by reducing the number of component re-renders. If you have forms that have a large number 
+of input fields then each time a field changes (e.g. single key stroke) every input component gets re-rendered. This can lead to key lag.
 
-Congrats! You just saved yourself hours of work by bootstrapping this project with TSDX. Let’s get you oriented with what’s here and how to use it.
-
-> This TSDX setup is meant for developing React components (not apps!) that can be published to NPM. If you’re looking to build an app, you should use `create-react-app`, `razzle`, `nextjs`, `gatsby`, or `react-static`.
-
-> If you’re new to TypeScript and React, checkout [this handy cheatsheet](https://github.com/sw-yx/react-typescript-cheatsheet/)
-
-## Commands
-
-TSDX scaffolds your new library inside `/src`, and also sets up a [Parcel-based](https://parceljs.org) playground for it inside `/example`.
-
-The recommended workflow is to run TSDX in one terminal:
+React Form-ula is different, it uses [react-cache](https://github.com/kuzmycz/react-cache) to identify which components have changed and only renders those components. 
+   
+## Install
 
 ```bash
-npm start # or yarn start
+npm install --save @kuzmycz/react-form-ula
 ```
 
-This builds to `/dist` and runs the project in watch mode so any edits you save inside `src` causes a rebuild to `/dist`.
+## Usage
 
-Then run the example inside another:
+Simple setup, no initial data, no validations, just works!
+```typescript jsx
+import { FormProvider, Form, Field } from 'kuzmycz@react-form-ula';
 
-```bash
-cd example
-npm i # or yarn to install dependencies
-npm start # or yarn start
+const MyForm = () => {
+
+    const submitHandler = (values: any) => alert("Submitted the following " + values);
+    
+    return(
+      <FormProvider onSubmit={submitHandler}>
+        <Form>
+          <div className={'element-layout'}>
+            <label>Name:
+              <Field type='text' name={`name`} />
+            </label>
+            <label>Name:
+              <Field type='text' name={`age`} />
+            </label>
+            <div>Gender</div>
+            <label><Field name={`gender`} value='male' type={'radio'} /> Male</label>
+            <label><Field name={`gender`} value='female' type={'radio'} /> Female</label>
+            <label><Field name={`gender`} value='other' type={'radio'} /> Other</label>
+          </div>
+
+          <button type='submit'>Submit</button>
+        </Form>
+      </FormProvider>);
+};
+
 ```
 
-The default example imports and live reloads whatever is in `/dist`, so if you are seeing an out of date component, make sure TSDX is running in watch mode like we recommend above. **No symlinking required**, [we use Parcel's aliasing](https://github.com/palmerhq/tsdx/pull/88/files).
+Example with initial data.
+```typescript jsx
+import { FormProvider, Form, Field } from 'kuzmycz@react-form-ula';
+const INITIAL_DATA = {name:'', age: '42', gender:'female'};
 
-To do a one-off build, use `npm run build` or `yarn build`.
 
-To run tests, use `npm test` or `yarn test`.
+const MyForm = () => {
 
-## Configuration
+    const submitHandler = (values: any) => alert("Submitted the following " + values);
+    
+    return(
+      <FormProvider initialData={INITIAL_DATA} onSubmit={submitHandler}>
+        <Form>
+          <div className={'element-layout'}>
+            <label>Name:
+              <Field type='text' name={`name`} />
+            </label>
+            <label>Name:
+              <Field type='text' name={`age`} />
+            </label>
+            <div>Gender</div>
+            <label><Field name={`gender`} value='male' type={'radio'} /> Male</label>
+            <label><Field name={`gender`} value='female' type={'radio'} /> Female</label>
+            <label><Field name={`gender`} value='other' type={'radio'} /> Other</label>
+          </div>
 
-Code quality is [set up for you](https://github.com/palmerhq/tsdx/pull/45/files) with `prettier`, `husky`, and `lint-staged`. Adjust the respective fields in `package.json` accordingly.
-
-### Jest
-
-Jest tests are set up to run with `npm test` or `yarn test`. This runs the test watcher (Jest) in an interactive mode. By default, runs tests related to files changed since the last commit.
-
-#### Setup Files
-
-This is the folder structure we set up for you:
-
-```shell
-/example
-  index.html
-  index.tsx       # test your component here in a demo app
-  package.json
-  tsconfig.json
-/src
-  index.tsx       # EDIT THIS
-/test
-  blah.test.tsx   # EDIT THIS
-.gitignore
-package.json
-README.md         # EDIT THIS
-tsconfig.json
+          <button type='submit'>Submit</button>
+        </Form>
+      </FormProvider>);
+};
 ```
 
-#### React Testing Library
-
-We do not set up `react-testing-library` for you yet, we welcome contributions and documentation on this.
-
-### Rollup
-
-TSDX uses [Rollup v1.x](https://rollupjs.org) as a bundler and generates multiple rollup configs for various module formats and build settings. See [Optimizations](#optimizations) for details.
-
-### TypeScript
-
-`tsconfig.json` is set up to interpret `dom` and `esnext` types, as well as `react` for `jsx`. Adjust according to your needs.
-
-## Continuous Integration
-
-### Travis
-
-_to be completed_
-
-### Circle
-
-_to be completed_
-
-## Optimizations
-
-Please see the main `tsdx` [optimizations docs](https://github.com/palmerhq/tsdx#optimizations). In particular, know that you can take advantage of development-only optimizations:
-
-```js
-// ./types/index.d.ts
-declare var __DEV__: boolean;
-
-// inside your code...
-if (__DEV__) {
-  console.log('foo');
+Example with validation data.
+```typescript jsx
+import { FormProvider, Form, Field, Error } from 'kuzmycz@react-form-ula';
+const INITIAL_DATA = {name:'', age: '42', gender:'female'};
+const isEmpty = (value) => value === undefined || value.trim().length() < 1;
+const validator = (values) => {
+  // you can use Nope or Yup
+  // return undefined for no errors or a structured object with errors
+  let errors = {};
+  if (isEmpty(values.name)) {
+    errors['name'] = "Name is required";
+  }
+  if (isEmpty(values.age)) {
+    errors['age'] = "Age is required";
+  } else if (Number(values.age) < 18 || values.name.trim().length < 1) {
+    errors['age'] = "Age has to be greater than 17";
+  }
+  return (errors === {}) ? undefined : errors;
 }
+
+
+const MyForm = () => {
+
+    const submitHandler = (values: any) => alert("Submitted the following " + values);
+    
+    return(
+      <FormProvider initialData={INITIAL_DATA} validator={validator} onSubmit={submitHandler}>
+        <Form>
+          <div className={'element-layout'}>
+            <div className={'field'}>
+                <label>Name:
+                  <Field type='text' name={`name`} />
+                </label>
+                <Error name={'name'}/>
+            </div>
+            <div className={'field'}>
+                <label>Name:
+                  <Field type='text' name={`age`} />
+                </label>
+                <Error name={'age'}/>
+            </div>
+            <div>Gender</div>
+            <label><Field name={`gender`} value='male' type={'radio'} /> Male</label>
+            <label><Field name={`gender`} value='female' type={'radio'} /> Female</label>
+            <label><Field name={`gender`} value='other' type={'radio'} /> Other</label>
+          </div>
+
+          <button type='submit'>Submit</button>
+        </Form>
+      </FormProvider>);
+};
 ```
 
-You can also choose to install and use [invariant](https://github.com/palmerhq/tsdx#invariant) and [warning](https://github.com/palmerhq/tsdx#warning) functions.
+Or perhaps you would want your own input type
 
-## Module Formats
 
-CJS, ESModules, and UMD module formats are supported.
+```typescript jsx
+import { useField } from 'kuzmycz@react-form-ula';
 
-The appropriate paths are configured in `package.json` and `dist/index.js` accordingly. Please report if any issues are found.
+const TextField = ({name, label, ...rest}) => {
+  const fieldContext = useField({...rest, name});
+  const {error, touched} = fieldContext.errorProps;
 
-## Using the Playground
+  return(
+    <div className='field'>
+      {label && <label className='field-label'>{label}</label>}
+      <input {...fieldContext.fieldProps}/>
+      {touched && error && <div className='field-error'>{error}</div>}
+    </div>
+  );
 
-```bash
-cd example
-npm i # or yarn to install dependencies
-npm start # or yarn start
+};
 ```
-
-The default example imports and live reloads whatever is in `/dist`, so if you are seeing an out of date component, make sure TSDX is running in watch mode like we recommend above. **No symlinking required**!
-
-## Deploying the Playground
-
-The Playground is just a simple [Parcel](https://parceljs.org) app, you can deploy it anywhere you would normally deploy that. Here are some guidelines for **manually** deploying with the Netlify CLI (`npm i -g netlify-cli`):
-
-```bash
-cd example # if not already in the example folder
-npm run build # builds to dist
-netlify deploy # deploy the dist folder
-```
-
-Alternatively, if you already have a git repo connected, you can set up continuous deployment with Netlify:
-
-```bash
-netlify init
-# build command: yarn build && cd example && yarn && yarn build
-# directory to deploy: example/dist
-# pick yes for netlify.toml
-```
-
-## Named Exports
-
-Per Palmer Group guidelines, [always use named exports.](https://github.com/palmerhq/typescript#exports) Code split inside your React app instead of your React library.
-
-## Including Styles
-
-There are many ways to ship styles, including with CSS-in-JS. TSDX has no opinion on this, configure how you like.
-
-For vanilla CSS, you can include it at the root directory and add it to the `files` section in your `package.json`, so that it can be imported separately by your users and run through their bundler's loader.
-
-## Publishing to NPM
-
-We recommend using [np](https://github.com/sindresorhus/np).
-
-## Usage with Lerna
-
-When creating a new package with TSDX within a project set up with Lerna, you might encounter a `Cannot resolve dependency` error when trying to run the `example` project. To fix that you will need to make changes to the `package.json` file _inside the `example` directory_.
-
-The problem is that due to the nature of how dependencies are installed in Lerna projects, the aliases in the example project's `package.json` might not point to the right place, as those dependencies might have been installed in the root of your Lerna project.
-
-Change the `alias` to point to where those packages are actually installed. This depends on the directory structure of your Lerna project, so the actual path might be different from the diff below.
-
-```diff
-   "alias": {
--    "react": "../node_modules/react",
--    "react-dom": "../node_modules/react-dom"
-+    "react": "../../../node_modules/react",
-+    "react-dom": "../../../node_modules/react-dom"
-   },
-```
-
-An alternative to fixing this problem would be to remove aliases altogether and define the dependencies referenced as aliases as dev dependencies instead. [However, that might cause other problems.](https://github.com/palmerhq/tsdx/issues/64)

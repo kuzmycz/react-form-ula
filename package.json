@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "1.0.1",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -27,7 +27,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "react-form-ula",
+  "name": "@kuzmycz/react-form-ula",
   "author": "Mark Kuzmycz",
   "module": "dist/react-form-ula.esm.js",
   "devDependencies": {
@@ -43,5 +43,24 @@
   },
   "dependencies": {
     "@kuzmycz/react-cache": "^1.0.8"
-  }
+  },
+  "description": "Congrats! You just saved yourself hours of work by bootstrapping this project with TSDX. Let’s get you oriented with what’s here and how to use it.",
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuzmycz/react-form-ula.git"
+  },
+  "keywords": [
+    "react",
+    "forms",
+    "cache",
+    "performant"
+  ],
+  "bugs": {
+    "url": "https://github.com/kuzmycz/react-form-ula/issues"
+  },
+  "homepage": "https://github.com/kuzmycz/react-form-ula#readme"
 }

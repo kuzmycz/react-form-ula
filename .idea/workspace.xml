@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="607e539b-e83e-4870-bc62-3c90a2da8c5b" name="Default Changelist" comment="" />
+    <list default="true" id="607e539b-e83e-4870-bc62-3c90a2da8c5b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,8 +25,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/example" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -32,14 +39,14 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/example" />
-      <recent name="$PROJECT_DIR$/example/src/components" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/example" />
       <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/example/src/components" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/example" />
       <recent name="$PROJECT_DIR$/example/src/components" />
     </key>
   </component>
@@ -72,7 +79,7 @@
       <workItem from="1584079292231" duration="10190000" />
       <workItem from="1584300106872" duration="3393000" />
       <workItem from="1584342354158" duration="13173000" />
-      <workItem from="1584393032381" duration="14586000" />
+      <workItem from="1584393032381" duration="18629000" />
     </task>
     <servers />
   </component>
@@ -90,10 +97,10 @@
     </state>
     <state x="360" y="223" key="#com.intellij.execution.impl.EditConfigurationsDialog/-72.-1080.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1584394550617" />
     <state x="360" y="223" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1584344706083" />
-    <state x="628" y="370" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584355068088">
+    <state x="628" y="370" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584564126227">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="628" y="370" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1584355068088" />
+    <state x="628" y="370" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1584564126227" />
     <state width="1771" height="318" key="GridCell.Tab.0.bottom" timestamp="1584392930545">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
