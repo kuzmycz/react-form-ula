@@ -1,4 +1,11 @@
 # React Form-ula User Guide
+
+[![Known Vulnerabilities](https://snyk.io/test/github/kuzmycz/react-form-ula/badge.svg?targetFile=package.json)](https://snyk.io/test/github/kuzmycz/react-form-ula?targetFile=package.json)
+[![Fast](https://badgen.now.sh/badge/speed/really%20fast/green)](https://npm.im/@kuzmycz/react-form-ula)
+[![gzip size](https://badgen.net/bundlephobia/minzip/@kuzmycz/react-form-ula)](https://bundlephobia.com/result?p=@kuzmycz/react-form-ula)
+[![gzip size](https://badgen.net/badge/license/MIT/blue)](./LICENSE)
+
+
 Inspired by this formik, this library exists to improve the performance of forms by reducing the number of component re-renders. If you have forms that have a large number 
 of input fields then each time a field changes (e.g. single key stroke) every input component gets re-rendered. This can lead to key lag.
 
