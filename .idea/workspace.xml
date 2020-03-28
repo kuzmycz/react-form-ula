@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="607e539b-e83e-4870-bc62-3c90a2da8c5b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +14,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1Yrr8aJ42gXaeG9qf3TEwNZ5rPQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -79,7 +79,9 @@
       <workItem from="1584079292231" duration="10190000" />
       <workItem from="1584300106872" duration="3393000" />
       <workItem from="1584342354158" duration="13173000" />
-      <workItem from="1584393032381" duration="18629000" />
+      <workItem from="1584393032381" duration="19186000" />
+      <workItem from="1584830660156" duration="4200000" />
+      <workItem from="1585218677701" duration="44000" />
     </task>
     <servers />
   </component>
@@ -101,38 +103,42 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="628" y="370" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1584564126227" />
-    <state width="1771" height="318" key="GridCell.Tab.0.bottom" timestamp="1584392930545">
+    <state width="1771" height="318" key="GridCell.Tab.0.bottom" timestamp="1585216783284">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1771" height="318" key="GridCell.Tab.0.bottom/-127.-1152.2048.1152/0.0.1792.1120@0.0.1792.1120" timestamp="1583926551387" />
     <state width="1771" height="318" key="GridCell.Tab.0.bottom/-72.-1080.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1584392930545" />
-    <state width="1771" height="318" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1584345283737" />
+    <state width="1771" height="318" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1585216783284" />
     <state width="1771" height="318" key="GridCell.Tab.0.bottom/0.23.1792.1026@0.23.1792.1026" timestamp="1584047863661" />
-    <state width="1771" height="318" key="GridCell.Tab.0.center" timestamp="1584392930543">
+    <state width="1771" height="318" key="GridCell.Tab.0.center" timestamp="1585216783276">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1771" height="318" key="GridCell.Tab.0.center/-127.-1152.2048.1152/0.0.1792.1120@0.0.1792.1120" timestamp="1583926551385" />
     <state width="1771" height="318" key="GridCell.Tab.0.center/-72.-1080.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1584392930543" />
-    <state width="1771" height="318" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1584345283735" />
+    <state width="1771" height="318" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1585216783276" />
     <state width="1771" height="318" key="GridCell.Tab.0.center/0.23.1792.1026@0.23.1792.1026" timestamp="1584047863658" />
-    <state width="1771" height="318" key="GridCell.Tab.0.left" timestamp="1584392930542">
+    <state width="1771" height="318" key="GridCell.Tab.0.left" timestamp="1585216783259">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1771" height="318" key="GridCell.Tab.0.left/-127.-1152.2048.1152/0.0.1792.1120@0.0.1792.1120" timestamp="1583926551384" />
     <state width="1771" height="318" key="GridCell.Tab.0.left/-72.-1080.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1584392930542" />
-    <state width="1771" height="318" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1584345283734" />
+    <state width="1771" height="318" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1585216783259" />
     <state width="1771" height="318" key="GridCell.Tab.0.left/0.23.1792.1026@0.23.1792.1026" timestamp="1584047863656" />
-    <state width="1771" height="318" key="GridCell.Tab.0.right" timestamp="1584392930544">
+    <state width="1771" height="318" key="GridCell.Tab.0.right" timestamp="1585216783283">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1771" height="318" key="GridCell.Tab.0.right/-127.-1152.2048.1152/0.0.1792.1120@0.0.1792.1120" timestamp="1583926551386" />
     <state width="1771" height="318" key="GridCell.Tab.0.right/-72.-1080.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1584392930544" />
-    <state width="1771" height="318" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1584345283736" />
+    <state width="1771" height="318" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1585216783283" />
     <state width="1771" height="318" key="GridCell.Tab.0.right/0.23.1792.1026@0.23.1792.1026" timestamp="1584047863659" />
     <state x="592" y="277" key="RollbackChangesDialog" timestamp="1583872764614">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="592" y="277" key="RollbackChangesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1583872764614" />
+    <state x="679" y="484" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585169293932">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="679" y="484" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-127.-1152.2048.1152/0.0.1792.1120@0.0.1792.1120" timestamp="1585169293932" />
     <state x="551" y="324" width="689" height="472" key="find.popup" timestamp="1584344949379">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
