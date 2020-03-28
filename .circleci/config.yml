@@ -1,0 +1,80 @@
+# Use the latest 2.1 version of CircleCI pipeline process engine. See: https://circleci.com/docs/2.0/configuration-reference
+version: 2.1
+# Use a package of configuration called an orb.
+
+jobs:
+  build:
+    docker:
+      - image: circleci/node:latest
+    working_directory: ~/repo
+    steps:
+      - checkout
+
+      - run: ls -l
+
+      - restore_cache:
+          keys:
+            - v1-yarn-deps-{{ checksum "package.json" }}
+            - v1-yarn-deps-
+
+
+      - run: yarn
+
+      - run: ls -l
+
+      - run: du .
+
+      - save_cache:
+          key: v1-yarn-deps-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+
+      - run:
+          name: "Running tests"
+          command: yarn test
+
+      - persist_to_workspace:
+          root: ~/repo
+          paths: .
+
+      - run: echo "Done"
+
+      # store test results
+      #      - store_test_results:
+      #          path: test_results
+
+      # store code coverage
+  deploy:
+    docker:
+      - image: circleci/node:latest
+    working_directory: ~/repo
+    steps:
+      - run: echo "Hello world"
+      - attach_workspace:
+          at: ~/repo
+      - run: ls -l
+      - run:
+          name: Authenticate with NPM
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
+      - run:
+          name: Publish package
+          command: npm publish --access public
+
+workflows:
+  # Name the workflow "welcome"
+  version: 2
+  build-and-publish:
+    # Run the welcome/run job in its own container
+    jobs:
+      - build:
+          filters:
+            tags:
+              only: /.*/
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v.*/
