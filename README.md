@@ -28,8 +28,7 @@ const MyForm = () => {
     const submitHandler = (values: any) => alert("Submitted the following " + values);
     
     return(
-      <FormProvider onSubmit={submitHandler}>
-        <Form>
+      <Form onSubmit={submitHandler}>
           <div className={'element-layout'}>
             <label>Name:
               <Field type='text' name={`name`} />
@@ -42,10 +41,9 @@ const MyForm = () => {
             <label><Field name={`gender`} value='female' type={'radio'} /> Female</label>
             <label><Field name={`gender`} value='other' type={'radio'} /> Other</label>
           </div>
-
+    
           <button type='submit'>Submit</button>
-        </Form>
-      </FormProvider>);
+      </Form>);
 };
 
 ```
@@ -61,8 +59,7 @@ const MyForm = () => {
     const submitHandler = (values: any) => alert("Submitted the following " + values);
     
     return(
-      <FormProvider initialData={INITIAL_DATA} onSubmit={submitHandler}>
-        <Form>
+      <Form initialData={INITIAL_DATA} onSubmit={submitHandler}>
           <div className={'element-layout'}>
             <label>Name:
               <Field type='text' name={`name`} />
@@ -77,8 +74,7 @@ const MyForm = () => {
           </div>
 
           <button type='submit'>Submit</button>
-        </Form>
-      </FormProvider>);
+      </Form>);
 };
 ```
 
@@ -108,8 +104,7 @@ const MyForm = () => {
     const submitHandler = (values: any) => alert("Submitted the following " + values);
     
     return(
-      <FormProvider initialData={INITIAL_DATA} validator={validator} onSubmit={submitHandler}>
-        <Form>
+      <Form initialData={INITIAL_DATA} validator={validator} onSubmit={submitHandler}>
           <div className={'element-layout'}>
             <div className={'field'}>
                 <label>Name:
@@ -130,8 +125,7 @@ const MyForm = () => {
           </div>
 
           <button type='submit'>Submit</button>
-        </Form>
-      </FormProvider>);
+      </Form>);
 };
 ```
 
