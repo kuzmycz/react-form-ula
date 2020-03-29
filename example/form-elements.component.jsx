@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, FormProvider } from '../dist';
+import { Form } from '../dist';
 import Entity from './entity.component';
 import { LogCache, useCacheContext } from '@kuzmycz/react-cache';
 import { Bag } from './util/bag';
@@ -36,9 +36,8 @@ const FormElements = () => {
 
   return (
 
-  <FormProvider initialValues={{seller: {fruit:[]}, buyer:{fruit:[]}}} validator={validator} onSubmit={submitHandler}>
+  <Form initialValues={{seller: {fruit:[]}, buyer:{fruit:[]}}} validator={validator} onSubmit={submitHandler}>
     <div className='example'>
-        <Form>
           <div className={'element-layout'}>
             <Entity name={'buyer'}/>
             <div>
@@ -50,10 +49,8 @@ const FormElements = () => {
 
           <button type='reset'>Reset</button>
           <button type='submit'>Submit</button>
-        </Form>
-
       </div>
-  </FormProvider>
+  </Form>
 
   );
 };
