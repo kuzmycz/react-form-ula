@@ -1,7 +1,6 @@
 import React from 'react';
 import { Bag } from './util/bag';
-import { FormProvider } from '../dist';
-import Entity from './entity.component';
+import { Form } from '../dist';
 import { LogCache } from '@kuzmycz/react-cache';
 import TextField from './text-field.component';
 import CheckBox from './check-box.component';
@@ -27,7 +26,7 @@ const CustomElement = () => {
   };
 
   return (
-    <FormProvider initialValues={{fruit:[]}} validator={validator}>
+    <Form initialValues={{fruit:[]}} validator={validator}>
 
       <TextField name='name' label={'Name'}/>
       <CheckBox name='happy' label={'Are you happy'}/>
@@ -37,7 +36,7 @@ const CustomElement = () => {
       <CheckBox name='fruit' value='pear' label='Pear'/>
 
       <LogCache display={true}/>
-    </FormProvider>);
+    </Form>);
 };
 
 export default CustomElement;

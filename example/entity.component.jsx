@@ -17,9 +17,9 @@ const Entity = ({name}) => {
 
         <div className={'section'}>
             <div>Gender</div>
-            <label><Field name={`${name}.gender`} value='male' type={'radio'} /> Male</label>
-            <label><Field name={`${name}.gender`} value='female' type={'radio'} /> Female</label>
-            <label><Field name={`${name}.gender`} value='other' type={'radio'} /> Other</label>
+            <label><Field name={`${name}.gender`} value='male' type={'radio'} component={Input}/> Male</label>
+            <label><Field name={`${name}.gender`} value='female' type={'radio'} component={Input}/> Female</label>
+            <label><Field name={`${name}.gender`} value='other' type={'radio'} component={Input}/> Other</label>
         </div>
 
         <div className={'section'}>

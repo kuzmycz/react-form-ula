@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="607e539b-e83e-4870-bc62-3c90a2da8c5b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/custom-element.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/example/custom-element.component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/entity.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/example/entity.component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/form-elements.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/example/form-elements.component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cache-logger.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/form-provider.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index-2.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +86,7 @@
       <workItem from="1584300106872" duration="3393000" />
       <workItem from="1584342354158" duration="13173000" />
       <workItem from="1584393032381" duration="18629000" />
+      <workItem from="1585471507178" duration="5451000" />
     </task>
     <task id="LOCAL-00001" summary="Adding CI/CD">
       <created>1585373677667</created>
@@ -85,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585373677667</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="New version 1.0.2">
+      <created>1585373905868</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1585373905868</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -99,7 +116,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Changes to dependencies" />
     <MESSAGE value="Adding CI/CD" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding CI/CD" />
+    <MESSAGE value="New version 1.0.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="New version 1.0.2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="360" y="223" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584394550617">
@@ -111,10 +129,14 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="628" y="370" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1584564126227" />
-    <state x="427" y="165" key="CommitChangelistDialog2" timestamp="1585373677491">
+    <state x="634" y="300" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585512839688">
+      <screen x="0" y="23" width="1792" height="1043" />
+    </state>
+    <state x="634" y="300" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-127.-1129.2048.1129/0.23.1792.1043@0.23.1792.1043" timestamp="1585512839688" />
+    <state x="427" y="165" key="CommitChangelistDialog2" timestamp="1585373905698">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="427" y="165" key="CommitChangelistDialog2/-127.-1152.2048.1152/0.0.1792.1120@0.0.1792.1120" timestamp="1585373677491" />
+    <state x="427" y="165" key="CommitChangelistDialog2/-127.-1152.2048.1152/0.0.1792.1120@0.0.1792.1120" timestamp="1585373905698" />
     <state width="1771" height="318" key="GridCell.Tab.0.bottom" timestamp="1584392930545">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
@@ -147,10 +169,14 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="592" y="277" key="RollbackChangesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1583872764614" />
-    <state x="496" y="301" key="Vcs.Push.Dialog.v2" timestamp="1585373705020">
+    <state x="496" y="301" key="Vcs.Push.Dialog.v2" timestamp="1585373910088">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="496" y="301" key="Vcs.Push.Dialog.v2/-127.-1152.2048.1152/0.0.1792.1120@0.0.1792.1120" timestamp="1585373705020" />
+    <state x="496" y="301" key="Vcs.Push.Dialog.v2/-127.-1152.2048.1152/0.0.1792.1120@0.0.1792.1120" timestamp="1585373910088" />
+    <state x="67" y="-1129" width="1329" height="1023" key="dock-window-1" timestamp="1585510180232">
+      <screen x="-127" y="-1129" width="2048" height="1129" />
+    </state>
+    <state x="67" y="-1129" width="1329" height="1023" key="dock-window-1/-127.-1129.2048.1129/0.23.1792.1043@0.23.1792.1043" timestamp="1585510180232" />
     <state x="551" y="324" width="689" height="472" key="find.popup" timestamp="1584344949379">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
