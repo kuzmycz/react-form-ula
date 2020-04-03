@@ -8,6 +8,7 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
+    "@kuzmycz/react-cache-tools": "^1.0.0",
     "clsx": "^1.1.0",
     "react-app-polyfill": "^1.0.0"
   },
@@ -19,8 +20,8 @@
   "devDependencies": {
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.8.4",
+    "node-sass": "^4.13.1",
     "parcel": "^1.12.3",
-    "typescript": "^3.4.5",
-    "node-sass": "^4.13.1"
+    "typescript": "^3.4.5"
   }
 }

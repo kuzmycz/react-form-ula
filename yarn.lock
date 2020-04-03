@@ -929,10 +929,10 @@
     "@types/yargs" "^15.0.0"
     chalk "^3.0.0"
 
-"@kuzmycz/react-cache@^1.0.8":
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/@kuzmycz/react-cache/-/react-cache-1.0.11.tgz#7e5d763401cee2ff347385ea7cab562c5f2995b2"
-  integrity sha512-fohkl4Be08Vq4lOxTIb7USZLJpTcJSxUX78MWfKwUOxehZXuttfMEJW7u5CMPA45L3hky2Bq77MTd2L1nb5cvA==
+"@kuzmycz/react-cache@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@kuzmycz/react-cache/-/react-cache-1.1.0.tgz#58fbce12a13c9b682b4339f9d4e41b730c254ab9"
+  integrity sha512-rlLclvNHELZpAThdW2LgRXdglnMQ4sTMFqDMt6Tn8DYRA57SWeY3lgjbCXu5gBKHlYl6Zv4URN5bFML6NcZIMQ==
 
 "@rollup/plugin-commonjs@^11.0.0":
   version "11.0.2"
@@ -1106,9 +1106,9 @@
     "@types/react" "*"
 
 "@types/react@*", "@types/react@^16.9.23":
-  version "16.9.27"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.27.tgz#7fc5db99e3ec3f21735b44d3560cff684856814a"
-  integrity sha512-j+RvQb9w7a2kZFBOgTh+s/elCwtqWUMN6RJNdmz0ntmwpeoMHKnyhUcmYBu7Yw94Rtj9938D+TJSn6WGcq2+OA==
+  version "16.9.26"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.26.tgz#1e55803e468f5393413e29033538cc9aaed6cec9"
+  integrity sha512-dGuSM+B0Pq1MKXYUMlUQWeS6Jj9IhSAUf9v8Ikaimj+YhkBcQrihWBkmyEhK/1fzkJTwZQkhZp5YhmWa2CH+Rw==
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
@@ -5597,9 +5597,9 @@ ts-jest@^24.0.2:
     yargs-parser "10.x"
 
 tsdx@^0.13.0:
-  version "0.13.1"
-  resolved "https://registry.yarnpkg.com/tsdx/-/tsdx-0.13.1.tgz#6fdfb7f70ecd22462d36c80f538d86f42d364b92"
-  integrity sha512-BAp96F6eLZVIk5FETP8kSbkC8sqvDQa0pPMz4euZ8am2aFNzeXNX7DbOxfMxYiwzfyemfUsmyb4p5usVbqM4IQ==
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/tsdx/-/tsdx-0.13.0.tgz#f8348b22724a7e618d501d0e8d133ff95d43f3e3"
+  integrity sha512-upsdQfzLz6eR5tDn0qQ/UJzQQk/mZLHE+2XNHndI87U3gvnXOJjvXcEx2X/Rl5n36bk44Ynvt5V9N3waT8tZng==
   dependencies:
     "@babel/core" "^7.4.4"
     "@babel/helper-module-imports" "^7.0.0"

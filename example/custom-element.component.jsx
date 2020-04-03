@@ -1,9 +1,9 @@
 import React from 'react';
 import { Bag } from './util/bag';
 import { Form } from '../dist';
-import { LogCache } from '@kuzmycz/react-cache';
 import TextField from './text-field.component';
 import CheckBox from './check-box.component';
+import { CacheLog } from '@kuzmycz/react-cache-tools';
 
 const CustomElement = () => {
 
@@ -35,7 +35,7 @@ const CustomElement = () => {
       <CheckBox name='fruit' value='orange' label='Orange'/>
       <CheckBox name='fruit' value='pear' label='Pear'/>
 
-      <LogCache display={true}/>
+      <CacheLog display={true}/>
     </Form>);
 };
 

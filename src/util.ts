@@ -1,9 +1,10 @@
-import { CacheBag } from "@kuzmycz/react-cache";
+import { CacheBag } from '@kuzmycz/react-cache';
 
 const flattenObject = (base: string, obj: any) => {
   let result: any[] = [];
 
-  const fieldName = (base: string, name:string) => (base.length > 0) ?`${base}.${name}` : name;
+  const fieldName = (base: string, name: string) =>
+    base.length > 0 ? `${base}.${name}` : name;
 
   Object.keys(obj).forEach(key => {
     let value = obj[key];
@@ -11,20 +12,20 @@ const flattenObject = (base: string, obj: any) => {
     if (typeof value === 'string' || Array.isArray(value)) {
       result.push({
         key: fieldName(base, key),
-        value: value
+        value: value,
       });
-    } else if (typeof value === 'object'){
-      result = [...result, ...flattenObject(fieldName(base, key), value)]
+    } else if (typeof value === 'object') {
+      result = [...result, ...flattenObject(fieldName(base, key), value)];
     }
   });
 
   return result;
 };
 
-const index = (values: {name: string, value: any}[]) => {
+const index = (values: { name: string; value: any }[]) => {
   const result: any = {};
   values.forEach(item => {
-    if(item.value !== undefined) result[item.name] = item.value
+    if (item.value !== undefined) result[item.name] = item.value;
   });
 
   return result;
@@ -46,9 +47,8 @@ export const trim = (value: any) => {
     }
   });
 
-  return (hasValue) ? result : undefined;
+  return hasValue ? result : undefined;
 };
-
 
 export const merge = (cache: CacheBag, original: any, newContent: any) => {
   const originalFlatten = flattenObject('', original);
@@ -57,15 +57,13 @@ export const merge = (cache: CacheBag, original: any, newContent: any) => {
 
   // Remove cleared
   originalFlatten.forEach(item => {
-    if(indexedContent[item.key] === undefined)
-      cache.set(item.key, undefined);
+    if (indexedContent[item.key] === undefined) cache.set(item.key, undefined);
   });
 
   // Add changes
   newContentFlattened.forEach(item => {
     cache.set(item.key, item.value);
-  })
-
+  });
 };
 
 export const deepCopy = (obj: any): any => {
@@ -73,7 +71,7 @@ export const deepCopy = (obj: any): any => {
     return [...obj];
   } else if (typeof obj === 'object') {
     let copy: any = {};
-    Object.keys(obj).forEach(key => copy[key] = deepCopy(obj[key]));
+    Object.keys(obj).forEach(key => (copy[key] = deepCopy(obj[key])));
     return copy;
   } else {
     return obj;

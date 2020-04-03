@@ -42,7 +42,7 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "@kuzmycz/react-cache": "^1.0.8"
+    "@kuzmycz/react-cache": "^1.1.0"
   },
   "description": "Congrats! You just saved yourself hours of work by bootstrapping this project with TSDX. Let’s get you oriented with what’s here and how to use it.",
   "directories": {

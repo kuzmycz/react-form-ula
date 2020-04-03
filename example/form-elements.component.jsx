@@ -1,8 +1,9 @@
 import React from 'react';
 import { Form } from '../dist';
 import Entity from './entity.component';
-import { LogCache, useCacheContext } from '@kuzmycz/react-cache';
+import { useCacheContext } from '@kuzmycz/react-cache';
 import { Bag } from './util/bag';
+import { CacheLog } from '@kuzmycz/react-cache-tools';
 
 const FormElements = () => {
 
@@ -42,7 +43,7 @@ const FormElements = () => {
             <Entity name={'buyer'}/>
             <div>
               <h2>Cache Content</h2>
-              <LogCache display={true}/>
+              <CacheLog display={true}/>
             </div>
             <Entity name={'seller'}/>
           </div>
