@@ -3,7 +3,7 @@
 node_modules
 .cache
 dist
-yarn.lock
+yarn.lock.bak
 *.bak
 .idea
 .idea/*
