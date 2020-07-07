@@ -31,7 +31,7 @@
   "author": "Mark Kuzmycz",
   "module": "dist/react-form-ula.esm.js",
   "devDependencies": {
-    "@types/jest": "^25.1.4",
+    "@types/jest": "^26.0.4",
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
     "husky": "^4.2.3",
