@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@kuzmycz/react-cache-tools": "^1.0.0",
-    "clsx": "^1.1.0",
+    "clsx": "^1.1.1",
     "react-app-polyfill": "^1.0.0"
   },
   "alias": {
