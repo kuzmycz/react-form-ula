@@ -125,8 +125,8 @@ const FormContext = ({
   });
 
   const touchErrorKeys = (errors: any) => {
-    Object.entries(flattenObject('', errors || {})).forEach(key => {
-      cache.set(`touched.${key}`, true);
+    flattenObject('', errors || {}).forEach(item => {
+      cache.set(`touched.${item.key}`, true);
     });
   };
 
