@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Cache, CacheBag, useCacheContext } from '@kuzmycz/react-cache';
-import { deepCopy, merge, trim } from './util';
+import { deepCopy, merge, trim, flattenObject } from './util';
 
 const validationSubscription = (
   validator: (values: any) => undefined | any
@@ -124,10 +124,24 @@ const FormContext = ({
     reset();
   });
 
+  const touchErrorKeys = (errors: any) => {
+    Object.entries(flattenObject('', errors || {})).forEach(key => {
+      cache.set(`touched.${key}`, true);
+    });
+  };
+
   const submitHandler = (e: React.BaseSyntheticEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    submit();
+    const errors = validate();
+
+    if (errors) {
+      // has errors, mark the fields with errors as touched so that the error display
+      touchErrorKeys(errors);
+    } else {
+      // No errors (or no validator)
+      submit();
+    }
   };
 
   const operators = { validate, submit, reset };

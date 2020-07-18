@@ -1,6 +1,6 @@
 import { CacheBag } from '@kuzmycz/react-cache';
 
-const flattenObject = (base: string, obj: any) => {
+export const flattenObject = (base: string, obj: any) => {
   let result: any[] = [];
 
   const fieldName = (base: string, name: string) =>
