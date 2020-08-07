@@ -67,6 +67,8 @@ export const merge = (cache: CacheBag, original: any, newContent: any) => {
 };
 
 export const deepCopy = (obj: any): any => {
+  if(!obj) return obj; // if falsy, return the falsy object
+
   if (Array.isArray(obj)) {
     return [...obj];
   } else if (typeof obj === 'object') {
