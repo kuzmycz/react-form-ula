@@ -21,10 +21,12 @@ export type FormProps = {
   children: any;
   initialValues: any;
   onSubmit?: (values: any) => void;
+  onSubmitError?: (messages: any) => void;
   validator?: (values: any) => undefined | any;
 };
 
 export type SubmitFunction = (values: any) => void;
+export type SubmitErrorFunction = (values: any) => void;
 export type ResetFunction = () => void;
 
 export const Form = ({
@@ -33,6 +35,7 @@ export const Form = ({
   validator,
   children,
   onSubmit,
+  onSubmitError,
 }: FormProps) => {
   if (validator) console.log('Have a validator');
   const subscriptions = [];
@@ -57,6 +60,7 @@ export const Form = ({
         initialErrors={initialErrors}
         validator={validator}
         onSubmit={onSubmit}
+        onSubmitError={onSubmitError}
       >
         {children}
       </FormContext>
@@ -70,6 +74,7 @@ export type FormContextProps = {
   initialErrors: any;
   initialValues: any;
   onSubmit?: SubmitFunction;
+  onSubmitError?: SubmitErrorFunction;
   validator?: (values: any) => undefined | any;
 };
 
@@ -111,10 +116,12 @@ const FormContext = ({
   validator,
   initialErrors,
   onSubmit,
+  onSubmitError,
   children,
 }: FormContextProps) => {
   const cache = useCacheContext();
   const submit = () => onSubmit && onSubmit(cache.content.values);
+  const handleErrors = (errors: any) => onSubmitError && onSubmitError(errors);
   const validate = () => validator && validator(cache.content.values);
   const reset = () => resetOperation(cache, initialValues, initialErrors);
 
@@ -138,6 +145,7 @@ const FormContext = ({
     if (errors) {
       // has errors, mark the fields with errors as touched so that the error display
       touchErrorKeys(errors);
+      handleErrors(errors);
     } else {
       // No errors (or no validator)
       submit();
