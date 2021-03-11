@@ -149,3 +149,32 @@ const TextField = ({name, label, ...rest}) => {
 
 };
 ```
+### useFieldValue
+The hook (useFieldValue) allows a form field's value to be changed. This is
+useful for form fields where their values are derived from other fields or 
+inputs. Note: useFieldValue is a short-cut for using useCacheValue.
+
+Why would you want to do this? Typically, you would use this if you have a 
+computed value that you want added to the form so that it can be submitted 
+later to a server. 
+
+```typescript jsx
+import { useFieldValue } from 'kuzmycz@react-form-ula';
+
+const SomeComponent = ({length, width}) => {
+  const [area, setArea] = useFieldValue(area);
+
+  useEffect(() => {
+    setArea(length * width);
+  }, [length, width])
+  
+  return(
+    <div className='field'>
+      {label && <label className='field-label'>Area</label>}
+      {area}
+      {touched && error && <div className='field-error'>{error}</div>}
+    </div>
+  );
+
+};
+```

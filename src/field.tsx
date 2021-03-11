@@ -155,3 +155,14 @@ export const useField = ({ name, type, value: valueProp, ...rest }: any) => {
 
   return { fieldProps, errorProps, helperProps };
 };
+
+export const useFieldValue = (name: string) => {
+  const [value, setValue] = useCacheValue(`values.${name}`);
+  const [, setTouched] = useCacheValue(`touched.${name}`);
+
+  return [value, (newValue: any) => {
+    setValue(newValue);
+    setTouched(true);
+  }];
+}
+
