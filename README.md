@@ -59,7 +59,7 @@ const MyForm = () => {
     const submitHandler = (values: any) => alert("Submitted the following " + values);
     
     return(
-      <Form initialData={INITIAL_DATA} onSubmit={submitHandler}>
+      <Form initialValues={INITIAL_DATA} onSubmit={submitHandler}>
           <div className={'element-layout'}>
             <label>Name:
               <Field type='text' name={`name`} />
@@ -104,7 +104,7 @@ const MyForm = () => {
     const submitHandler = (values: any) => alert("Submitted the following " + values);
     
     return(
-      <Form initialData={INITIAL_DATA} validator={validator} onSubmit={submitHandler}>
+      <Form initialValues={INITIAL_DATA} validator={validator} onSubmit={submitHandler}>
           <div className={'element-layout'}>
             <div className={'field'}>
                 <label>Name:
