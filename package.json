@@ -32,7 +32,7 @@
   "module": "dist/react-form-ula.esm.js",
   "devDependencies": {
     "@types/jest": "^26.0.4",
-    "@types/react": "^16.9.23",
+    "@types/react": "^17.0.4",
     "@types/react-dom": "^16.9.5",
     "husky": "^4.2.3",
     "react": "^16.13.0",
