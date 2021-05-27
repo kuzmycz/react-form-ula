@@ -24,7 +24,11 @@ const changeSubscription = (
     key: 'values',
     callback: (_key: string, _value: any, cache: CacheBag) => {
       let values = cache.content.values;
-      if (validator && validator(values)) {
+      if (!!validator) {
+        if (validator(values)) {
+          changeHandler(_key, values);
+        }
+      } else {
         changeHandler(_key, values);
       }
     },
