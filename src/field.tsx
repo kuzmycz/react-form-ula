@@ -160,9 +160,11 @@ export const useFieldValue = (name: string) => {
   const [value, setValue] = useCacheValue(`values.${name}`);
   const [, setTouched] = useCacheValue(`touched.${name}`);
 
-  return [value, (newValue: any) => {
-    setValue(newValue);
-    setTouched(true);
-  }];
-}
-
+  return [
+    value,
+    (newValue: any) => {
+      setValue(newValue);
+      setTouched(true);
+    },
+  ];
+};

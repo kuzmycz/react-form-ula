@@ -16,15 +16,32 @@ const validationSubscription = (
   };
 };
 
+const changeSubscription = (
+  changeHandler: ChangeFunction,
+  validator: (values: any) => undefined | any
+) => {
+  return {
+    key: 'values',
+    callback: (_key: string, _value: any, cache: CacheBag) => {
+      let values = cache.content.values;
+      if (validator && validator(values)) {
+        changeHandler(_key, values);
+      }
+    },
+  };
+};
+
 export type FormProps = {
   action?: any;
   children: any;
-  initialValues: any;
+  initialValues?: any;
+  onChange?: (fieldName: string, values: any) => void;
   onSubmit?: (values: any) => void;
   onSubmitError?: (messages: any) => void;
   validator?: (values: any) => undefined | any;
 };
 
+export type ChangeFunction = (fieldName: string, values: any) => void;
 export type SubmitFunction = (values: any) => void;
 export type SubmitErrorFunction = (values: any) => void;
 export type ResetFunction = () => void;
@@ -34,6 +51,7 @@ export const Form = ({
   initialValues = {},
   validator,
   children,
+  onChange,
   onSubmit,
   onSubmitError,
 }: FormProps) => {
@@ -42,6 +60,7 @@ export const Form = ({
   // Fix values and use tat in the operators. Note initialValues has to be deep copied
   // Create a formContext (private) and a useFormContext (public)
   if (validator) subscriptions.push(validationSubscription(validator));
+  if (onChange) subscriptions.push(changeSubscription(onChange, validator));
   const initialErrors = (validator && validator(initialValues)) || {};
 
   return (
