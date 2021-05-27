@@ -18,7 +18,7 @@ const validationSubscription = (
 
 const changeSubscription = (
   changeHandler: ChangeFunction,
-  validator: (values: any) => undefined | any
+  validator?: (values: any) => undefined | any
 ) => {
   return {
     key: 'values',
