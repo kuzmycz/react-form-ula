@@ -16,21 +16,14 @@ const validationSubscription = (
   };
 };
 
-const changeSubscription = (
-  changeHandler: ChangeFunction,
-  validator?: (values: any) => undefined | any
-) => {
+const changeSubscription = (changeHandler: ChangeFunction) => {
   return {
     key: 'values',
     callback: (_key: string, _value: any, cache: CacheBag) => {
       let values = cache.content.values;
-      if (!!validator) {
-        if (validator(values)) {
-          changeHandler(_key, values);
-        }
-      } else {
-        changeHandler(_key, values);
-      }
+
+      let key = _key.length > 7 ? _key.substr(7) : _key;
+      changeHandler(key, values);
     },
   };
 };
@@ -64,7 +57,7 @@ export const Form = ({
   // Fix values and use tat in the operators. Note initialValues has to be deep copied
   // Create a formContext (private) and a useFormContext (public)
   if (validator) subscriptions.push(validationSubscription(validator));
-  if (onChange) subscriptions.push(changeSubscription(onChange, validator));
+  if (onChange) subscriptions.push(changeSubscription(onChange));
   const initialErrors = (validator && validator(initialValues)) || {};
 
   return (
