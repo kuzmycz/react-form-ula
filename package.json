@@ -1,5 +1,5 @@
 {
-  "version": "1.2.4",
+  "version": "1.2.8",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -42,7 +42,7 @@
     "typescript": "^4.2"
   },
   "dependencies": {
-    "@kuzmycz/react-cache": "^1.1.1"
+    "@kuzmycz/react-cache": "^1.1.5"
   },
   "description": "Congrats! You just saved yourself hours of work by bootstrapping this project with TSDX. Let’s get you oriented with what’s here and how to use it.",
   "directories": {

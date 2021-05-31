@@ -955,10 +955,10 @@
     "@types/yargs" "^15.0.0"
     chalk "^3.0.0"
 
-"@kuzmycz/react-cache@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@kuzmycz/react-cache/-/react-cache-1.1.1.tgz#76bddcdd0c45a9a55bdac162d6637b8bee493816"
-  integrity sha512-ehLuoRHRNGunFAqejDTsJ8y1Q6FEAZV9dUAeT4ueES0dGF7b7ISXEuVrfGJBU7iErW4QovTsfdwnfs+F0JtCPg==
+"@kuzmycz/react-cache@^1.1.5":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@kuzmycz/react-cache/-/react-cache-1.1.5.tgz#43bd2cccd8c0fa3d4a91051b76d6d357d972cc3d"
+  integrity sha512-ZsBH7NtKIsl+wuKLpuFk4FgfY/wY6qFlEeH4b4d4i2lFsRYAns1qV5CotYeS5cJXKBejglscphbUSJP6A1GG7g==
 
 "@rollup/plugin-commonjs@^11.0.0":
   version "11.1.0"

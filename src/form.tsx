@@ -31,6 +31,7 @@ const changeSubscription = (changeHandler: ChangeFunction) => {
 export type FormProps = {
   action?: any;
   children: any;
+  name?: string;
   initialValues?: any;
   onChange?: (fieldName: string, values: any) => void;
   onSubmit?: (values: any) => void;
@@ -45,6 +46,7 @@ export type ResetFunction = () => void;
 
 export const Form = ({
   action,
+  name,
   initialValues = {},
   validator,
   children,
@@ -62,6 +64,7 @@ export const Form = ({
 
   return (
     <Cache
+      namedStore={name}
       values={{
         values: deepCopy(initialValues),
         errors: deepCopy(initialErrors),
