@@ -156,9 +156,7 @@ const FormContext = ({
     });
   };
 
-  const submitHandler = (e: React.BaseSyntheticEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
+  const validateAndSubmit = () => {
     const errors = validate();
 
     if (errors) {
@@ -169,9 +167,16 @@ const FormContext = ({
       // No errors (or no validator)
       submit();
     }
+  }
+
+  const submitHandler = (e: React.BaseSyntheticEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    validateAndSubmit();
   };
 
-  const operators = { validate, submit, reset };
+  const operators = { validate, submit, reset, validateAndSubmit };
   cache.content.operators = operators;
 
   return (
@@ -214,6 +219,18 @@ export const useSubmit = (): SubmitFunction => {
   const cache = useCacheContext();
 
   return cache.content?.operators?.submit;
+};
+
+export const useValidateAndSubmit = (): SubmitFunction => {
+  const cache = useCacheContext();
+
+  return cache.content?.operators?.validateAndSubmit;
+};
+
+export const useValidator = (): SubmitFunction => {
+  const cache = useCacheContext();
+
+  return cache.content?.operators?.validator;
 };
 
 export const useReset = (): ResetFunction => {
